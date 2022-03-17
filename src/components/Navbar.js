@@ -1,4 +1,5 @@
 import React from "react";
+import isro from "../static/isro.png";
 
 const Navbar = () => {
   return (
@@ -6,8 +7,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            {" "}
-            Logo{" "}
+            <img height="40" src={isro} alt="isro" /> ISRO XSM
           </a>
           <button
             className="navbar-toggler"

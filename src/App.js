@@ -34,7 +34,18 @@ function App() {
           </h4>
           <FileUpload setvalues = {setvalues}/>
         </div>
+      </div>
+      <div className="container">
         <Details></Details>
+      </div>
+      <div className="footer">
+        <div className="row">
+          <div className="col-lg-8 col-md-10 mx-auto">
+            <p style={{ marginTop: "10px" }} className="copyright text-muted">
+              Team ABCD
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
