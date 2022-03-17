@@ -5,7 +5,14 @@ import Graph from "./components/Graph";
 import Details from "./components/Details";
 import FileUpload from "./components/FileUpload";
 
+import React, { useState, useEffect } from 'react'
+
+
+
+
 function App() {
+  const [values, setvalues] = useState({})
+
   return (
     <div className="App">
       <Navbar></Navbar>
@@ -18,14 +25,14 @@ function App() {
           width: "80vw",
         }}
       >
-        <Graph></Graph>
+        <Graph values = {values}></Graph>
       </div>
       <div className="container">
         <div className="container mt-4">
           <h4 className="display-6 text-center mb-4">
             <i className="fab fa-react" /> Upload Your File
           </h4>
-          <FileUpload />
+          <FileUpload setvalues = {setvalues}/>
         </div>
         <Details></Details>
       </div>

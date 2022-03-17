@@ -3,7 +3,7 @@ import Message from "./Message";
 import Progress from "./Progress";
 import axios from "axios";
 
-const FileUpload = () => {
+const FileUpload = (props) => {
   const [file, setFile] = useState("");
   const [filename, setFilename] = useState("Choose File");
   const [uploadedFile, setUploadedFile] = useState({});
@@ -21,7 +21,7 @@ const FileUpload = () => {
     formData.append("file", file);
 
     try {
-      const res = await axios.post("/upload", formData, {
+      const res = await axios.post("http://localhost:5000/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -36,6 +36,12 @@ const FileUpload = () => {
       });
 
       const { fileName, filePath } = res.data;
+      props.setvalues({
+        x : res.data.x,
+        y : res.data.y
+      })
+      
+
       setUploadedFile({ fileName, filePath });
       setMessage("File uploaded");
     } catch (err) {

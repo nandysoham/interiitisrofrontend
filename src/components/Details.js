@@ -1,13 +1,13 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const Details = () => {
   return (
     <div>
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
+      <ul className="nav nav-tabs" id="myTab" role="tablist">
+        <li className="nav-item" role="presentation">
           <button
-            class="nav-link active"
+            className="nav-link active"
             id="Details-tab"
             data-bs-toggle="tab"
             data-bs-target="#Details"
@@ -19,9 +19,9 @@ const Details = () => {
             Details
           </button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li className="nav-item" role="presentation">
           <button
-            class="nav-link"
+            className="nav-link"
             id="Flares-tab"
             data-bs-toggle="tab"
             data-bs-target="#Flares"
@@ -33,9 +33,9 @@ const Details = () => {
             Flares
           </button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li className="nav-item" role="presentation">
           <button
-            class="nav-link"
+            className="nav-link"
             id="References-tab"
             data-bs-toggle="tab"
             data-bs-target="#References"
@@ -48,9 +48,9 @@ const Details = () => {
           </button>
         </li>
       </ul>
-      <div class="tab-content" id="myTabContent">
+      <div className="tab-content" id="myTabContent">
         <div
-          class="tab-pane fade show active"
+          className="tab-pane fade show active"
           id="Details"
           role="tabpanel"
           aria-labelledby="Details-tab"
@@ -58,7 +58,7 @@ const Details = () => {
           Details of the given input
         </div>
         <div
-          class="tab-pane fade"
+          className="tab-pane fade"
           id="Flares"
           role="tabpanel"
           aria-labelledby="Flares-tab"
@@ -66,7 +66,7 @@ const Details = () => {
           More about flares
         </div>
         <div
-          class="tab-pane fade"
+          className="tab-pane fade"
           id="References"
           role="tabpanel"
           aria-labelledby="References-tab"
