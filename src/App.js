@@ -28,19 +28,15 @@ function App() {
         </div>
         <FileUpload />
       </div>
-      <div
-        className="container"
-        style={{
-          height: "80vh",
-          width: "80vw",
-        }}
-      >
+      <div className="container">
         <Details></Details>
       </div>
       <div className="footer">
         <div className="row">
           <div className="col-lg-8 col-md-10 mx-auto">
-            <p className="copyright text-muted">Team ABCD</p>
+            <p style={{ marginTop: "10px" }} className="copyright text-muted">
+              Team ABCD
+            </p>
           </div>
         </div>
       </div>

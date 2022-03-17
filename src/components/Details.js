@@ -1,5 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Option1 from "./Option1";
+import Option2 from "./Option2";
+import Option3 from "./Option3";
 
 const Details = () => {
   return (
@@ -55,6 +58,7 @@ const Details = () => {
           role="tabpanel"
           aria-labelledby="Details-tab"
         >
+          <Option1 />
           Details of the given input
         </div>
         <div
@@ -63,6 +67,9 @@ const Details = () => {
           role="tabpanel"
           aria-labelledby="Flares-tab"
         >
+          <Option2 />
+          <Option2 />
+          <Option2 />
           More about flares
         </div>
         <div
@@ -71,6 +78,7 @@ const Details = () => {
           role="tabpanel"
           aria-labelledby="References-tab"
         >
+          <Option3 />
           Reference and further reading
         </div>
       </div>
