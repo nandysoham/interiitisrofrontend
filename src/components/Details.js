@@ -1,8 +1,10 @@
 import React from "react";
+import Dataoption from "./Dataoption";
 
 import Option1 from "./Option1";
 import Option2 from "./Option2";
 import Option3 from "./Option3";
+
 
 const Details = (props) => {
   return (
@@ -39,6 +41,20 @@ const Details = (props) => {
             aria-selected="false"
           >
             Flares
+          </button>
+        </li>
+        <li className="nav-item" role="presentation">
+          <button
+            className="nav-link"
+            id="References-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#Dataoptions"
+            type="button"
+            role="tab"
+            aria-controls="References"
+            aria-selected="false"
+          >
+            Data output
           </button>
         </li>
         <li className="nav-item" role="presentation">
@@ -84,6 +100,14 @@ const Details = (props) => {
           aria-labelledby="References-tab"
         >
           <Option3 />
+        </div>
+        <div
+          className="tab-pane fade"
+          id="Dataoptions"
+          role="tabpanel"
+          aria-labelledby="References-tab"
+        >
+          <Dataoption values = {props.values}/>
         </div>
       </div>
     </div>
