@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Line, Bar, Chart } from "react-chartjs-2";
-import { Chart as ch} from "chart.js";
+import { Chart as ch } from "chart.js";
 import zoomPlugin from "chartjs-plugin-zoom";
 
 ch.register(zoomPlugin);
 
 const FullGraph = (props) => {
   const [graphdata, setgraphdata] = useState({
-    labels: [
-      
-    ],
+    labels: [],
     datasets: [
       {
-        type : "line",
+        type: "line",
         label: "Flux",
         fill: false,
         lineTension: 0.5,
@@ -24,9 +22,9 @@ const FullGraph = (props) => {
       },
     ],
   });
-  const [propertyval, setpropertyval] = useState([])
-  const [isvisibleproperty, setisvisibleproperty] = useState(false)
-  
+  const [propertyval, setpropertyval] = useState([]);
+  const [isvisibleproperty, setisvisibleproperty] = useState(false);
+
   useEffect(() => {
     setpropertyval(props.data)
     setisvisibleproperty(true)
@@ -34,77 +32,70 @@ const FullGraph = (props) => {
 
 
     var dataarray = [
-        {
-            x:1,
-            y : 2
+      {
+        x: 1,
+        y: 2,
+      },
+    ];
+    if (props.data) {
+      var n = props.values.x.length;
+      var n1 = props.data.length;
+      var i = 0,
+        j = 0;
+      dataarray = [];
+      while (i < n && j < n1) {
+        if (props.data[j] === props.values.x[i]) {
+          dataarray.push({ x: props.values.x[i], y: props.values.y[i] });
+          i += 1;
+          j += 1;
+        } else {
+          i += 1;
         }
-    ]
-    if(props.data){
-        
-        var n = props.values.x.length
-        var n1 = props.data.length
-        var i=0, j=0;
-        dataarray = []
-        while(i < n && j <n1){
-            if(props.data[j] == props.values.x[i]){
-                dataarray.push({x : props.values.x[i] , y : props.values.y[i]})
-                i+=1;
-                j+=1;
-            }
-            else{
-                i+=1;
-            }
-        }
-
+      }
     }
-    
 
-    console.log("data array")
+    console.log("data array");
     console.log(dataarray);
     setgraphdata({
       labels: props.values.x,
       datasets: [
-        
         {
-            type : "bubble",
-            borderColor: "rgba(120,0,0,1)",
-            backgroundColor : "orange",
-            // backgroundColor: "rgba(120,0,0)",
-            fill : false,
-            label: props.details.legend,
-            data : dataarray
-            
-          },
-          {
-            type : 'line',
-            label: "Flux",
-            fill: false,
-            lineTension: 0.5,
-            backgroundColor: "rgba(0,120,0,1)",
-            borderColor: "rgba(0,0,0,1)",
-            borderWidth: 2,
-            data: props.values.y,
-          }
-
-        
+          type: "bubble",
+          borderColor: "rgba(120,0,0,1)",
+          backgroundColor: "orange",
+          fill: false,
+          label: props.details.legend,
+          data: dataarray,
+        },
+        {
+          type: "line",
+          label: "Flux",
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor: "rgba(0,120,0,1)",
+          borderColor: "rgba(0,0,0,1)",
+          borderWidth: 2,
+          data: props.values.y,
+        },
       ],
     });
   }, [props]);
-
-
-
 
   return (
     <div>
       <Chart
         data={graphdata}
         options={{
+          scales: {
+            x: { title: { display: true, text: "TIME" } },
+            y: { title: { display: true, text: "COUNT / SEC" } },
+          },
+
           title: {
             display: true,
             text: "Average Rainfall per month",
             fontSize: 20,
           },
-          
           legend: {
             display: true,
             position: "right",
@@ -112,7 +103,6 @@ const FullGraph = (props) => {
           plugins: {
             zoom: {
               zoom: {
-                enabled: true,
                 drag: true,
                 wheel: {
                   enabled: true,
@@ -120,13 +110,13 @@ const FullGraph = (props) => {
                 pinch: {
                   enabled: true,
                 },
+                mode: "x",
+              },
+              pan: {
+                enabled: true,
                 mode: "xy",
               },
             },
-            // pan: {
-            //   enabled: true,
-            //   mode: "xy",
-            // },
           },
         }}
       />
@@ -135,12 +125,3 @@ const FullGraph = (props) => {
 };
 
 export default FullGraph;
-
-
-/*
-elements:{
-              redius : 10,
-              display : true
-
-          },
-*/
