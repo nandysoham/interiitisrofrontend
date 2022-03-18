@@ -7,7 +7,7 @@ const Dataoption = (props) => {
         var dataarray = [
             
         ]
-        if(props.values){
+        if(props.values.x){
             
             var n = props.values.x.length
             var n1 = props.values.time_of_occurances.length
@@ -32,17 +32,6 @@ const Dataoption = (props) => {
 
     return (
         <div>
-
-
-            {
-            props.values.time_of_occurances ? 
-            peakarray.map((ele, idx)=>
-                    <p>{ele.x}    {ele.y}</p>
-                )
-                :
-                <li>Nothing to display</li>
-            
-            }
 
         </div>
     )

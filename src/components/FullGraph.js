@@ -31,7 +31,7 @@ const FullGraph = (props) => {
     setpropertyval(props.data)
     setisvisibleproperty(true)
     
-    
+
 
     var dataarray = [
         {

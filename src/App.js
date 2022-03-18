@@ -12,6 +12,7 @@ import React, { useState, useEffect } from 'react'
 
 function App() {
   const [values, setvalues] = useState({})
+  const [uploaded, setuploaded] = useState(false)
 
   return (
     <div className="App">
@@ -24,20 +25,29 @@ function App() {
           height: "80vh",
           width: "80vw",
         }}
-      >
-        <Graph values = {values}></Graph>
+      > 
+        {uploaded ? 
+          <Graph values = {values}></Graph>
+          :
+          <div/>
+        }
       </div>
       <div className="container">
         <div className="container mt-4">
           <h4 className="display-6 text-center mb-4">
             <i className="fab fa-react" /> Upload Your File
           </h4>
-          <FileUpload setvalues = {setvalues}/>
+          <FileUpload setvalues = {setvalues} setuploaded = {setuploaded}/>
         </div>
       </div>
+
+        {uploaded ? 
       <div className="container">
         <Details values = {values}></Details>
       </div>
+      : 
+      <div/>
+        }
       <div className="footer">
         <div className="row">
           <div className="col-lg-8 col-md-10 mx-auto">

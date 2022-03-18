@@ -37,6 +37,7 @@ const FileUpload = (props) => {
 
       const { fileName, filePath } = res.data;
       props.setvalues(res.data)
+      props.setuploaded(true)
       
 
       setUploadedFile({ fileName, filePath });
