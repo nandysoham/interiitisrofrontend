@@ -36,7 +36,7 @@ function App() {
         </div>
       </div>
       <div className="container">
-        <Details></Details>
+        <Details values = {values}></Details>
       </div>
       <div className="footer">
         <div className="row">

@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import FullGraph from "./FullGraph";
 
 const Option1 = (props) => {
   return (
@@ -6,7 +7,10 @@ const Option1 = (props) => {
       <div className="about-text">
         <h2>Curve Data Analysis</h2>
         <p>Detailed Analysis of the plotted curve</p>
-        <h3>More..</h3>
+        <p>Time of Flare Occurances</p>
+        <FullGraph values = {props.values} data = {props.values.time_of_occurances} details = {{"type" : "time_of_occurances", "legend" : "Time of flare occurances"}}/>
+        
+
       </div>
     </div>
   );

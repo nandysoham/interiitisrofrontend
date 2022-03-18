@@ -5,7 +5,7 @@ import Option1 from "./Option1";
 import Option2 from "./Option2";
 import Option3 from "./Option3";
 
-const Details = () => {
+const Details = (props) => {
   return (
     <div>
       <ul className="nav nav-tabs" id="myTab" role="tablist">
@@ -59,7 +59,8 @@ const Details = () => {
           role="tabpanel"
           aria-labelledby="Details-tab"
         >
-          <Option1 />
+          
+          <Option1 values = {props.values}/>
           Details of the given input
         </div>
         <div
@@ -69,8 +70,7 @@ const Details = () => {
           aria-labelledby="Flares-tab"
         >
           <Option2 />
-          <Option2 />
-          <Option2 />
+
           More about flares
         </div>
         <div
