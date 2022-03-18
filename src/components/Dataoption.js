@@ -28,17 +28,25 @@ const Dataoption = (props) => {
 
   return (
     <div>
-      <table className="table">
-        <tr>
-          <th> Flare occurrence time</th> <th>Count/s</th>
-        </tr>
+      <table className="table table-striped">
+          <thead className = "thead-dark">
+                <tr>
+                <th >Sl No.</th><th> Peak Flare occurrence time</th> <th>Count/s</th> <th>Starting Time</th> <th>Ending time</th> <th>Rise Time</th> <th> Decay Time</th> <th> Total Time</th>
+                </tr>
+        </thead>
 
         {props.values.time_of_occurances ? (
           peakarray.map((ele, idx) => (
             <>
               <tr>
+                <td>{idx + 1}</td>
                 <td>{ele.x}</td>
                 <td>{ele.y}</td>
+                <td>{props.values.left[idx]}</td>
+                <td>{props.values.right[idx]}</td>
+                <td>{props.values.rise_time[idx]}</td>
+                <td>{props.values.decay_time[idx]}</td>
+                <td>{props.values.rise_time[idx] + props.values.decay_time[idx]}</td>
               </tr>{" "}
             </>
           ))

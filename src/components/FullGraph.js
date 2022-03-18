@@ -7,6 +7,8 @@ import zoomPlugin from "chartjs-plugin-zoom";
 ch.register(zoomPlugin);
 
 const FullGraph = (props) => {
+    const [xrange, setxrange] = useState({min : -1000, max :1000})
+    const [yrange, setyrange] = useState({min : -1000, max : 1000})
   const [graphdata, setgraphdata] = useState({
     labels: [],
     datasets: [
@@ -87,8 +89,18 @@ const FullGraph = (props) => {
         data={graphdata}
         options={{
           scales: {
-            x: { title: { display: true, text: "TIME" } },
-            y: { title: { display: true, text: "COUNT / SEC" } },
+            x: { 
+                title: {
+                     display: true, 
+                    text: "TIME" 
+                }
+            },
+            y: { 
+                title: { 
+                    display: true, 
+                    text: "COUNT / SEC" 
+                } 
+            },
           },
 
           title: {
