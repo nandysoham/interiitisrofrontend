@@ -58,6 +58,10 @@ const Graph = (props) => {
       <Line
         data={graphdata}
         options={{
+          scales: {
+            x: { title: { display: true, text: "TIME" } },
+            y: { title: { display: true, text: "COUNT / SEC" } },
+          },
           title: {
             display: true,
             text: "Average Rainfall per month",

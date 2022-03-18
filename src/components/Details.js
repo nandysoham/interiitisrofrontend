@@ -5,7 +5,6 @@ import Option1 from "./Option1";
 import Option2 from "./Option2";
 import Option3 from "./Option3";
 
-
 const Details = (props) => {
   return (
     <div>
@@ -79,9 +78,7 @@ const Details = (props) => {
           role="tabpanel"
           aria-labelledby="Details-tab"
         >
-          
-          <Option1 values = {props.values}/>
-          Details of the given input
+          <Option1 values={props.values} />
         </div>
         <div
           className="tab-pane fade"
@@ -90,8 +87,6 @@ const Details = (props) => {
           aria-labelledby="Flares-tab"
         >
           <Option2 />
-
-          More about flares
         </div>
         <div
           className="tab-pane fade"
@@ -107,7 +102,7 @@ const Details = (props) => {
           role="tabpanel"
           aria-labelledby="References-tab"
         >
-          <Dataoption values = {props.values}/>
+          <Dataoption values={props.values} />
         </div>
       </div>
     </div>
