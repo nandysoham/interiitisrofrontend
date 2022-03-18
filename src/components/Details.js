@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import Option1 from "./Option1";
 import Option2 from "./Option2";
 import Option3 from "./Option3";
@@ -8,7 +7,12 @@ import Option3 from "./Option3";
 const Details = (props) => {
   return (
     <div>
-      <ul className="nav nav-tabs" id="myTab" role="tablist">
+      <ul
+        className="nav nav-tabs"
+        id="myTab"
+        role="tablist"
+        style={{ marginBottom: "4%" }}
+      >
         <li className="nav-item" role="presentation">
           <button
             className="nav-link active"
@@ -80,7 +84,6 @@ const Details = (props) => {
           aria-labelledby="References-tab"
         >
           <Option3 />
-          Reference and further reading
         </div>
       </div>
     </div>

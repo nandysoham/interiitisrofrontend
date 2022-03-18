@@ -2,9 +2,14 @@ const Option3 = (props) => {
   return (
     <div className="container">
       <div className="about-text">
-        <h2>Curve Data Analysis</h2>
-        <p>Detailed Analysis of the plotted curve</p>
-        <h3>More...</h3>
+        <h2>References:</h2>
+        <a href="https://en.wikipedia.org/wiki/Solar_flare">
+          https://en.wikipedia.org/wiki/Solar_flare
+        </a>
+        <br />
+        <a href="https://www.nasa.gov/mission_pages/sunearth/news/X-class-flares.html">
+          https://www.nasa.gov/mission_pages/sunearth/news/X-class-flares.html
+        </a>
       </div>
     </div>
   );

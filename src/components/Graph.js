@@ -70,7 +70,6 @@ const Graph = (props) => {
           plugins: {
             zoom: {
               zoom: {
-                enabled: true,
                 drag: true,
                 wheel: {
                   enabled: true,
@@ -78,13 +77,13 @@ const Graph = (props) => {
                 pinch: {
                   enabled: true,
                 },
+                mode: "x",
+              },
+              pan: {
+                enabled: true,
                 mode: "xy",
               },
             },
-            // pan: {
-            //   enabled: true,
-            //   mode: "xy",
-            // },
           },
         }}
       />
