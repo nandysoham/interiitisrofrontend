@@ -1,7 +1,7 @@
 import React from "react";
 import { slide as Menu } from "react-burger-menu";
 import "./Sidebar.css";
-import pdf from "../static/Lorem_ipsum.pdf";
+import pdf from "../static/User_Manual_T9.pdf";
 
 export default (props) => {
   return (
