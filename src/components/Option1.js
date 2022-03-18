@@ -6,7 +6,7 @@ const Option1 = (props) => {
       <div className="about-text">
         <h2>Curve Data Analysis</h2>
         <p>Detailed Analysis of the plotted curve</p>
-        <h3>More..</h3>
+        <h3>More...</h3>
       </div>
     </div>
   );
