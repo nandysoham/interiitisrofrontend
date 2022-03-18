@@ -15,10 +15,11 @@ function App() {
   const [uploaded, setuploaded] = useState(false)
 
   return (
-    <div className="App">
+    <div className="App" >
       <Navbar></Navbar>
       <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
-
+      <div className="container" style={{minHeight:"100vh"}}>
+      {uploaded ? 
       <div
         className="container"
         style={{
@@ -26,12 +27,15 @@ function App() {
           width: "80vw",
         }}
       > 
-        {uploaded ? 
+        
           <Graph values = {values}></Graph>
-          :
-          <div/>
-        }
+          
       </div>
+      :
+      <div style={{height : "20vh"}}/>
+    }
+
+
       <div className="container">
         <div className="container mt-4">
           <h4 className="display-6 text-center mb-4">
@@ -48,6 +52,10 @@ function App() {
       : 
       <div/>
         }
+      
+
+
+      </div>
       <div className="footer">
         <div className="row">
           <div className="col-lg-8 col-md-10 mx-auto">
