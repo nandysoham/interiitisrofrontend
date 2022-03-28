@@ -1,6 +1,9 @@
 ## **Solar X-ray Monitor and Data Analysis System**
 
 ---
+## About the Project
+[MP_ISRO_Final_T9.pdf](https://github.com/nandysoham/interiitisrofrontend/files/8360020/MP_ISRO_Final_T9.pdf)
+
 
 ## Installation
 
